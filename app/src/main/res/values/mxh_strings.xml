@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+  
+    <string name="mxh_dialog_msg">你的5折专属特惠码已复制到剪切板,请跳转到任选一个微信好友<Data><![CDATA[<font color="#f1ff04">长按文本框粘贴</font>]]></Data>并发送（如下图），按提示完成支付即可以%1$d元获得原价%2$d元的会员资格。</string>
+    <string name="web_pay_loading_tip">正在检查支付环境...</string>
+    <string name="web_pay_query_order_status">正在查询订单状态...</string>
+    <string name="web_pay_redirecting">正在跳转到微信...</string>
+     <!-- 节点描述start added by zhujihe -->
+    <string name="action_app_start">启动应用</string>
+    <string name="action_start_pay">启动支付</string>
+    <string name="action_pay_end">结束支付</string>
+    <string name="action_isor_pay">判断是否可以支付</string>
+    <string name="action_pay_yes">可以支付</string>
+    <string name="action_pay_no">不可以支付</string>
+    <string name="action_app_exit">应用退出</string>
+    <string name="action_pop">弹窗弹出</string>
+    <string name="action_pop_cancel">取消弹窗</string>
+    <string name="action_pop_confirm">确认弹窗</string>
+    <string name="action_passageway_pay">通道启动支付</string>
+    <string name="action_fail_node">失败节点</string>
+    <string name="action_fail_retry_pop">失败重试弹窗</string>
+    <string name="action_fail_retry_confirm">失败重试点击确认</string>
+    <string name="action_fail_retry_cancel">失败重试取消弹窗</string>
+    <string name="action_fail_retry_start_pay">失败重试启动支付</string>
+    <string name="action_zfb_install_yes">支付宝已安装、微信未安装</string>
+    <string name="action_wx_install_yes">微信已安装，支付宝未安装</string>
+    <string name="action_zfb_wx_install_yes">支付宝、微信都已安装</string>
+    <string name="action_zfb_wx_install_no">支付宝、微信都未安装</string>
+    <!-- 节点描述end -->
+    
+    <string name="net_connect_failed">网络连接失败，请检查网络情况</string> 
+     <string name="action_pay_result_confirm">正在检测支付结果...</string>
+    
+</resources>

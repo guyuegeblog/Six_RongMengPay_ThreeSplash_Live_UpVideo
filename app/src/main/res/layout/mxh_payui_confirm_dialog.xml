@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:background="@drawable/alert_dialog_bg" >
+
+        <TextView
+            android:id="@+id/sy_payui_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="25dp"
+            android:text="@string/mxh_alert_confirm_tip_message"
+            android:textColor="#262626"
+            android:textSize="16dp" />
+
+        <View
+            android:id="@+id/sy_update_line"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_below="@+id/sy_payui_text"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="16dp"
+            android:background="#d8d8d8" />
+
+        <Button
+            android:id="@+id/mxh_payui_determine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/sy_update_line"
+            android:layout_marginRight="32dp"
+            android:layout_marginTop="16dp"
+            android:background="@android:color/transparent"
+            android:padding="5dp"
+            android:text="@string/alert_dialog_finish"
+            android:textColor="#06a303"
+            android:textSize="16dp" />
+
+    </RelativeLayout>
+
+</LinearLayout>

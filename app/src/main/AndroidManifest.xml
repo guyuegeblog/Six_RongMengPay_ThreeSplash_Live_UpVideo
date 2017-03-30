@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.third.app">
+
+    <!-- app开发权限 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CHANGE_CONFIGURATION"></uses-permission>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.MOUNT_FORMAT_FILESYSTEMS" />
+    <uses-permission android:name="cn.swiftpass.wxpay.permission.MMOAUTH_CALLBACK" />
+    <uses-permission android:name="cn.swiftpass.wxpay.permission.MM_MESSAGE" />
+
+    <application
+        android:name="com.app.Application.TvApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/logo"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+
+        <!-- 主页面 -->
+        <activity
+            android:name="com.app.Activity.MainActivity"
+            android:label="@string/app_name"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/ColorTranslucentTheme_Main" />
+
+        <!-- 启动页面 -->
+        <activity
+            android:name="com.app.Activity.SplashActivity"
+            android:label="@string/app_name"
+            android:launchMode="standard"
+            android:screenOrientation="portrait"
+            android:theme="@style/ColorTranslucentTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="com.alipay.sdk.app.H5PayActivity"
+            android:configChanges="orientation|keyboardHidden|navigation|screenSize"
+            android:exported="false"
+            android:screenOrientation="behind"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+
+        <!-- 会员面 -->
+        <activity
+            android:name="com.jssm.zsrz.wxapi.PayActivity"
+            android:exported="true"
+            android:launchMode="singleTask"
+            android:theme="@style/ColorTranslucentTheme" />
+
+
+        <!-- 会员面 -->
+        <!--android:configChanges="orientation|keyboardHidden|navigation|screenSize"-->
+        <!-- 支付开始 -->
+        <activity
+            android:name="com.rongmeng.pay.RMPayActivity"
+            android:alwaysRetainTaskState="true"
+            android:configChanges="orientation|keyboardHidden|navigation|screenSize"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <activity
+            android:name="com.jssm.zsrz.wxapi.WXPayEntryActivity"
+            android:configChanges="orientation|keyboardHidden|navigation|screenSize"
+            android:exported="true"
+            android:launchMode="singleTop"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+        <activity
+            android:name="com.switfpass.pay.activity.PayResultActivity"
+            android:configChanges="orientation|keyboardHidden|navigation|screenSize"
+            android:exported="true"
+            android:launchMode="singleTop" />
+        <!-- 支付结束 -->
+        <!-- 微信配置 -->
+        <receiver android:name="com.app.WeiXin.AppRegister">
+            <intent-filter>
+                <action android:name="com.tencent.mm.plugin.openapi.Intent.ACTION_REFRESH_WXAPP" />
+            </intent-filter>
+        </receiver>
+
+        <!-- 友盟统计 -->
+        <meta-data
+            android:name="UMENG_APPKEY"
+            android:value="5881c6dcaed17903800004ac" />
+        <meta-data
+            android:name="UMENG_CHANNEL"
+            android:value="${UMENG_CHANNEL_VALUE}" />
+
+        <!-- 直播定时更新 -->
+        <service
+            android:name="com.app.Service.UpdateService"
+            android:enabled="true"
+            android:process=":remote" />
+
+        <!-- 无语的业务。。。。 -->
+        <service
+            android:name="com.app.Service.FifteenMinituesService"
+            android:enabled="true"
+            android:process=":remote" />
+
+        <activity
+            android:name="com.app.Activity.ChannelActivity"
+            android:label="@string/app_name"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/ColorTranslucentTheme_Main" />
+        <activity
+            android:name="com.app.Activity.LoadMoreActivity"
+            android:label="@string/app_name"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/ColorTranslucentTheme_Main" />
+        <activity
+            android:name="com.app.Activity.MessageActivity"
+            android:label="@string/app_name"
+            android:launchMode="standard"
+            android:screenOrientation="portrait"
+            android:theme="@style/ColorTranslucentTheme_Main" />
+        <activity
+            android:name="com.app.Activity.SuperVideoDetailsActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name="com.app.Activity.VipInfoActivity"
+            android:label="@string/app_name"
+            android:launchMode="singleTask"
+            android:theme="@style/ColorTranslucentTheme_Main" />
+        <!--android:configChanges="keyboardHidden|orientation|screenSize"-->
+        <!--android:launchMode="standard"-->
+    </application>
+
+</manifest>

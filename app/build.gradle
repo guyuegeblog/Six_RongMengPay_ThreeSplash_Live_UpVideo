@@ -1,0 +1,218 @@
+apply plugin: 'com.android.application'
+
+android {
+    signingConfigs {
+        nightpapazhongqin {
+            keyAlias 'rm1.keystore'
+            keyPassword 'android'
+            storeFile file('C:/WangXuDongQM/rm1.keystore')
+            storePassword 'android'
+        }
+    }
+    compileSdkVersion 24
+    buildToolsVersion "24.0.0"
+    defaultConfig {
+        applicationId "com.jssm.zsrz"
+        minSdkVersion 15
+        targetSdkVersion 22
+        versionCode 1
+        versionName "5.59"
+    }
+    buildTypes {
+        release {
+            //Zipalign优化
+            zipAlignEnabled true
+            // 移除无用的resource文件
+            shrinkResources true
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.nightpapazhongqin
+        }
+        debug {
+            //Zipalign优化
+            zipAlignEnabled true
+            // 移除无用的resource文件
+            shrinkResources true
+            minifyEnabled false
+            signingConfig signingConfigs.nightpapazhongqin
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+//    sourceSets {
+//        main {
+//            jniLibs.srcDirs = ['jniLibs']
+//        }
+//    }
+    productFlavors {
+//        nightpop0002
+//        wypp50011{}
+//        crzb10001 {}
+//        crzb10002 {}
+//        crzb10003 {}
+//        crzb10004 {}
+//        crzb10005 {}
+//        crzb10006 {}
+//        crzb10007 {}
+//        crzb10075 {}
+//        crzb10076 {}
+
+//        crzb10021 {}
+//        crzb10022 {}
+//        crzb10023 {}
+//        crzb10024 {}
+//        crzb10025 {}
+
+//        crzb10026 {}
+//        crzb10027 {}
+//        crzb10028 {}
+//        crzb10029 {}
+//        crzb10030 {}
+
+//        crzb10033 {}
+//        crzb10032 {}
+//
+//        crzb10041 {}
+//        crzb10031 {}
+//        crzb10042 {}
+//        crzb10043 {}
+//        crzb10044 {}
+//        crzb10045 {}
+
+//        crzb10064 {}
+//        crzb10065 {}
+//        crzb10066 {}
+
+//        crzb10061 {}
+//        crzb10062 {}
+//        crzb10063 {}
+//        crzb10070 {}
+//        crzb10071 {}
+//        crzb10081 {}
+//        crzb10082 {}
+//        crzb10084 {}
+//        crzb10085 {}
+//        crzb10086 {}
+//        crzb10088 {}
+//        crzb10092 {}
+//        crzb20002 {}
+//        crzb10081 {}
+//        crzb10082 {}
+//        crzb10083 {}
+//        crzb10084 {}
+//        crzb10085 {}
+//        crzb10086 {}
+//        crzb10088 {}
+//        crzb10090 {}
+//        crzb10091 {}
+//        crzb10092 {}
+//        crzb8888 {}
+//
+//        crzb20011 {}
+//        crzb20012 {}
+//        crzb20013 {}
+//        crzb20014 {}
+        crzb20015 {}
+//        crzb20021 {}
+//        crzb20022 {}
+//        crzb20023 {}
+//        crzb10081 {}
+//        crzb20011 {}
+//        crzb20013 {}
+//        crzb20031 {}
+//        crzb20032 {}
+//        crzb20052 {}
+//        crzb20070 {}
+//        crzb20060 {}
+//        crzb20081 {}
+//        crzb20082 {}
+//        crzb20083 {}
+//        crzb20084 {}
+//        crzb20085 {}
+//        crzb20086 {}
+//        crzb20087 {}
+//        crzb20088 {}
+//        crzb20089 {}
+//        crzb20090 {}
+//        crzb20091 {}
+//        crzb20092 {}
+//        crzb20093 {}
+//        crzb20094 {}
+//        crzb20095 {}
+
+//        crzb30081 {}
+//        crzb30082 {}
+//        crzb30083 {}
+//        crzb30084 {}
+//        crzb30085 {}
+//        crzb30086 {}
+//        crzb30087 {}
+//        crzb30088 {}
+//        crzb30089 {}
+//        crzb30090 {}
+//        crzb30091 {}
+//        crzb30092 {}
+//        crzb30093 {}
+//        crzb30094 {}
+//        crzb30095 {}
+//        crzb30096 {}
+//        crzb30097 {}
+//        crzb30098 {}
+//        crzb30099 {}
+//        crzb30100 {}
+
+//        crzb40081 {}
+//        crzb40082 {}
+//        crzb40083 {}
+//        crzb40084 {}
+//        crzb40085 {}
+//        crzb40086 {}
+//        crzb40087 {}
+//        crzb40088 {}
+//        crzb40089 {}
+//        crzb40090 {}
+//        crzb40091 {}
+//        crzb40092 {}
+//        crzb40093 {}
+//        crzb40094 {}
+//        crzb40095 {}
+//        crzb40096 {}
+//        crzb40097 {}
+//        crzb40098 {}
+//        crzb40099 {}
+//        crzb40100 {}
+
+//        crzb20011 {}
+//        crzb10085 {}
+//
+//        crzb50001 {}
+//        crzb50002 {}
+//        crzb50003 {}
+//        crzb50004 {}
+//        crzb50005 {}
+
+//        crzb60045 {}
+    }
+
+    productFlavors.all {
+        flavor -> flavor.manifestPlaceholders = [UMENG_CHANNEL_VALUE: name]
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    testCompile 'junit:junit:4.12'
+    compile 'com.umeng.analytics:analytics:latest.integration'
+    compile 'com.android.support:appcompat-v7:24.0.0'
+    compile 'com.android.support:recyclerview-v7:24.0.0'
+    compile 'com.github.bumptech.glide:glide:3.5.2'
+    compile 'org.apache.httpcomponents:httpcore:4.4.4'
+//  compile 'com.alibaba:fastjson:1.2.14'
+    compile 'com.github.paradoxie:AutoVerticalTextview:0.1'
+    compile 'com.youth.banner:banner:+'
+    compile project(path: ':library')
+    compile project(':material-spinner-1.0.5')
+    compile 'com.squareup.okhttp3:okhttp:3.4.1'
+    compile 'com.squareup.okio:okio:1.7.0'
+    compile 'com.jakewharton:butterknife:7.0.0'
+    compile 'junit:junit:4.12'
+}

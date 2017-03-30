@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="mxh_alert_confirm_tip_message">请确认是否完成支付!</string>
+    <string name="alert_dialog_finish">完成</string>
+
+</resources>
