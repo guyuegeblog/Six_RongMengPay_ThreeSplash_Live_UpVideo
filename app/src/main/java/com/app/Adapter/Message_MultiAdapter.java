@@ -32,7 +32,7 @@ import com.app.Tool.ScreenTool;
 import com.app.Tool.VipTool;
 import com.app.View.CropCircleTransformation;
 import com.app.View.T;
-import com.jssm.zsrz.wxapi.PayActivity;
+import com.wjdz.rmgljtsc.wxapi.PayActivity;
 
 import java.util.List;
 

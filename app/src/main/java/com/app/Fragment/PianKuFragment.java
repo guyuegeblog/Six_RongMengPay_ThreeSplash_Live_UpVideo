@@ -134,7 +134,7 @@ public class PianKuFragment extends LazyFragment implements BaseQuickAdapter.Req
             }
         });
         pianKu_multiAdapter.setOnLoadMoreListener(this);
-        pianKu_multiAdapter.openLoadAnimation(BaseQuickAdapter.SLIDEIN_BOTTOM);
+        pianKu_multiAdapter.openLoadAnimation(BaseQuickAdapter.SCALEIN);
         piankuRecyclerview.setAdapter(pianKu_multiAdapter);
     }
 

@@ -197,7 +197,7 @@ public class LookAtFragment extends LazyFragment implements SwipeRefreshLayout.O
             }
         });
 //       look_multiAdapter.setOnLoadMoreListener(this);
-        look_multiAdapter.openLoadAnimation(BaseQuickAdapter.SLIDEIN_BOTTOM);
+        look_multiAdapter.openLoadAnimation(BaseQuickAdapter.SCALEIN);
         lookRecyclerview.setAdapter(look_multiAdapter);
     }
 

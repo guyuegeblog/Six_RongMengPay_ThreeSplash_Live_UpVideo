@@ -42,7 +42,7 @@ import com.chad.library.adapter.base.BaseMultiItemQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.third.app.R;
 import com.umeng.analytics.MobclickAgent;
-import com.jssm.zsrz.wxapi.PayActivity;
+import com.wjdz.rmgljtsc.wxapi.PayActivity;
 
 import org.json.JSONException;
 import org.json.JSONObject;

@@ -1,4 +1,4 @@
-package com.jssm.zsrz.wxapi;
+package com.wjdz.rmgljtsc.wxapi;
 
 
 import java.io.ByteArrayOutputStream;

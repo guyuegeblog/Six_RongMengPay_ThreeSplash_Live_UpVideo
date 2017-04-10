@@ -58,7 +58,7 @@ import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.shizhefei.fragment.LazyFragment;
 import com.third.app.R;
 import com.umeng.analytics.MobclickAgent;
-import com.jssm.zsrz.wxapi.PayActivity;
+import com.wjdz.rmgljtsc.wxapi.PayActivity;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -231,7 +231,7 @@ public class LiveFragment extends LazyFragment implements SwipeRefreshLayout.OnR
             }
         });
 //      look_multiAdapter.setOnLoadMoreListener(this);
-        live_multiAdapter.openLoadAnimation(BaseQuickAdapter.SLIDEIN_BOTTOM);
+        live_multiAdapter.openLoadAnimation(BaseQuickAdapter.SCALEIN);
         liveRecyclerview.setAdapter(live_multiAdapter);
     }
 

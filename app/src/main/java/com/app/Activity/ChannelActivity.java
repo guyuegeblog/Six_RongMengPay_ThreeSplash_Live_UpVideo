@@ -33,7 +33,7 @@ import com.app.Tool.NetTool;
 import com.app.Tool.ScreenTool;
 import com.app.Tool.VipTool;
 import com.app.View.T;
-import com.jssm.zsrz.wxapi.PayActivity;
+import com.wjdz.rmgljtsc.wxapi.PayActivity;
 import com.umeng.analytics.MobclickAgent;
 
 import org.json.JSONException;
@@ -128,7 +128,7 @@ public class ChannelActivity extends AppCompatActivity implements SwipeRefreshLa
             }
         });
 //      channel_multiAdapter.setOnLoadMoreListener(this);
-        type_multiAdapter.openLoadAnimation(BaseQuickAdapter.SLIDEIN_BOTTOM);
+        type_multiAdapter.openLoadAnimation(BaseQuickAdapter.SCALEIN);
         channeRecyclerview.setAdapter(type_multiAdapter);
     }
 

@@ -135,7 +135,7 @@ public class SilverFragment extends LazyFragment implements BaseQuickAdapter.Req
             }
         });
         silver_multiAdapter.setOnLoadMoreListener(this);
-        silver_multiAdapter.openLoadAnimation(BaseQuickAdapter.SLIDEIN_BOTTOM);
+        silver_multiAdapter.openLoadAnimation(BaseQuickAdapter.SCALEIN);
         silverRecyclerview.setAdapter(silver_multiAdapter);
     }
 

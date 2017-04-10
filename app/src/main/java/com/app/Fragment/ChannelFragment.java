@@ -117,7 +117,7 @@ public class ChannelFragment extends LazyFragment implements SwipeRefreshLayout.
             }
         });
 //      channel_multiAdapter.setOnLoadMoreListener(this);
-        channel_multiAdapter.openLoadAnimation(BaseQuickAdapter.SLIDEIN_BOTTOM);
+        channel_multiAdapter.openLoadAnimation(BaseQuickAdapter.SCALEIN);
         channelRecyclerview.setAdapter(channel_multiAdapter);
     }
 

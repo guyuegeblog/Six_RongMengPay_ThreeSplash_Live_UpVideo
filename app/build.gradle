@@ -12,11 +12,19 @@ android {
     compileSdkVersion 24
     buildToolsVersion "24.0.0"
     defaultConfig {
-        applicationId "com.jssm.zsrz"
+        applicationId "com.wjdz.rmgljtsc"
         minSdkVersion 15
         targetSdkVersion 22
         versionCode 1
-        versionName "5.59"
+        versionName "5.75"
+//        manifestPlaceholders = [
+//                GETUI_APP_ID : "diuZy7v1jN61qUUkAuky6A",
+//                GETUI_APP_KEY : "Mw76eZkQxJ9rMymuDZn1bA",
+//                GETUI_APP_SECRET : "NjmdIhHVEA6hmBqeRsA6B8"
+//        ]
+//        ndk {
+//            abiFilters "armeabi", "armeabi-v7a", "x86_64"
+//        }
     }
     buildTypes {
         release {
@@ -105,7 +113,7 @@ android {
 //        crzb10090 {}
 //        crzb10091 {}
 //        crzb10092 {}
-//        crzb8888 {}
+        crzb8888 {}
 //
 //        crzb20011 {}
 //        crzb20012 {}
@@ -181,8 +189,8 @@ android {
 //        crzb40099 {}
 //        crzb40100 {}
 
-//        crzb20011 {}
-//        crzb10085 {}
+        crzb20011 {}
+        crzb10085 {}
 //
 //        crzb50001 {}
 //        crzb50002 {}
@@ -215,4 +223,7 @@ dependencies {
     compile 'com.squareup.okio:okio:1.7.0'
     compile 'com.jakewharton:butterknife:7.0.0'
     compile 'junit:junit:4.12'
+    //个推送
+//    compile 'com.getui:sdk:2.10.2.0'
+//    compile 'com.android.support:support-v4:+'
 }

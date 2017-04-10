@@ -136,7 +136,7 @@ public class JarpanFragment extends LazyFragment implements BaseQuickAdapter.Req
             }
         });
         jar_multiAdapter.setOnLoadMoreListener(this);
-        jar_multiAdapter.openLoadAnimation(BaseQuickAdapter.SLIDEIN_BOTTOM);
+        jar_multiAdapter.openLoadAnimation(BaseQuickAdapter.SCALEIN);
         jarpanseRecyclerview.setAdapter(jar_multiAdapter);
     }
 

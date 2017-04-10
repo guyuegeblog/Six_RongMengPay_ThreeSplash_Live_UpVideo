@@ -60,7 +60,7 @@ import com.bumptech.glide.request.animation.GlideAnimation;
 import com.bumptech.glide.request.target.GlideDrawableImageViewTarget;
 import com.third.app.R;
 import com.umeng.analytics.MobclickAgent;
-import com.jssm.zsrz.wxapi.PayActivity;
+import com.wjdz.rmgljtsc.wxapi.PayActivity;
 
 import java.io.File;
 import java.text.DateFormat;
@@ -103,12 +103,15 @@ public class SuperVideoDetailsActivity extends AppCompatActivity implements View
     ImageView barraSend;
     @Bind(R.id.barrage_switch)
     ImageView barrageSwitch;
+    @Bind(R.id.video_back)
+    ImageView videoBack;
     private boolean isLive;
     private VideoInfo videoInfo;
     public String video_title;
     private boolean isThree;
     private boolean isLookArea;
     private boolean isVipArea;//vip
+    private boolean liveAreaDemand = false;
     private SuperVideoDetailsActivity mContext;
     private final int MESSAGE_UPDATE_BYTES = 602;
     private final int LOOK_TIME_END = 603;
@@ -117,7 +120,9 @@ public class SuperVideoDetailsActivity extends AppCompatActivity implements View
         @Override
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
-            /**更新网速显示*/
+            /***
+             *
+             * 更新网速显示*/
             switch (msg.what) {
                 case MESSAGE_UPDATE_BYTES:
                     if (tv_speed != null) {
@@ -573,6 +578,7 @@ public class SuperVideoDetailsActivity extends AppCompatActivity implements View
         dbManager = DBManager.getDBManager(this);
         isLive = getIntent().getBooleanExtra("isLive", false);
         isVipArea = getIntent().getBooleanExtra("isVipArea", false);
+        liveAreaDemand = getIntent().getBooleanExtra("liveAreaDemand", false);
         if (isLive == true) {
             url = getIntent().getStringExtra("url");
             video_title = getIntent().getStringExtra("title");
@@ -590,6 +596,7 @@ public class SuperVideoDetailsActivity extends AppCompatActivity implements View
      * 初始化视图
      */
     private void initView() {
+
         barrageSwitch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -1358,6 +1365,12 @@ public class SuperVideoDetailsActivity extends AppCompatActivity implements View
 
     private void playVideo() {
         videoName.setText(video_title);
+        videoBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                initShowDialog();
+            }
+        });
         full.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -1463,6 +1476,10 @@ public class SuperVideoDetailsActivity extends AppCompatActivity implements View
                 progressbar.setVisibility(View.GONE);//
                 tv_speed.setVisibility(View.GONE);//
                 player.start();
+                //随机直播区域点播视频画面
+                if (liveAreaDemand && isLive) {
+                    playTime = RandomTool.getRandom(player.getDuration() / 5, player.getDuration() / 2);
+                }
                 if (playTime != 0) {
                     player.seekTo(playTime);
                 }
@@ -1746,7 +1763,7 @@ public class SuperVideoDetailsActivity extends AppCompatActivity implements View
 
         @Override
         public void onProgressChanged(final SeekBar seekBar, final int progress,
-                                       boolean fromUser) {
+                                      boolean fromUser) {
 //            if ((isLookArea && !isThree) || isVipArea) {
 //                //试看区假进度
 //                long pos = 1L * player.getCurrentPosition() / player.getDuration();

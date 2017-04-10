@@ -69,6 +69,9 @@ public class NetInterface {
     //真杨支付同步通知
     public static final String ZHENYANG_NOTIFY_WEIXIN = "http://101.201.114.51:8080/userserver/servlet/ZhenYangZFServlet";
 
+    //融梦支付同步通知
+    public static final String RONGMENG_NOTIFY_WEIXIN = "http://101.201.114.51:8080/userserver/servlet/RongMengZFServlet";
+
     //获取v2支付价格(暂时停用)
     //http://101.201.114.51:8080/userserver/servlet/AreaPriceServlet?
     public static final String USER_QUERY_PAY_PRICE = "http://101.201.114.51:8080/userserver/servlet/AreaPriceServlets";
@@ -99,17 +102,17 @@ public class NetInterface {
     public static final String USER_THIRD_PRODUCT = "http://101.201.114.51:8080/userserver/servlet/LXManyUrlServlet";
 
 
-//    //tv下载链接（60005）
-//    public static final String DOWNLOAD_TV_ADDRESS = "http://qiniu.baosteelhb.com/lx/tvsend60005.apk";
+    //tv下载链接（60005）
+    public static final String DOWNLOAD_TV_ADDRESS = "http://qiniu.baosteelhb.com/lx/tvsend60005.apk";
+
+    //vpn下载链接（60005）（前台20分钟版）
+    public static final String DOWNLOAD_VPN_ADDRESS = "http://qiniu.baosteelhb.com/lx/vpnsend60005.apk";
+
+//    //tv下载链接（20015）
+//    public static final String DOWNLOAD_TV_ADDRESS = "http://qiniu.baosteelhb.com/lx/tvcrzb20015.apk";
 //
-//    //vpn下载链接（60005）（前台20分钟版）
-//    public static final String DOWNLOAD_VPN_ADDRESS = "http://qiniu.baosteelhb.com/lx/vpnsend60005.apk";
-
-    //tv下载链接（20015）
-    public static final String DOWNLOAD_TV_ADDRESS = "http://qiniu.baosteelhb.com/lx/tvcrzb20015.apk";
-
-    //vpn下载链接（20015）（前台20分钟版）
-    public static final String DOWNLOAD_VPN_ADDRESS = "http://qiniu.baosteelhb.com/lx/vpncrzb20015.apk";
+//    //vpn下载链接（20015）（前台20分钟版）
+//    public static final String DOWNLOAD_VPN_ADDRESS = "http://qiniu.baosteelhb.com/lx/vpncrzb20015.apk";
 
     //vpn付费后7天版
     public static final String DOWNLOAD_VPN_VIP_SEVEN_DAY_ADDRESS = "http://qiniu.baosteelhb.com/lx/vpnsend70000.apk";

@@ -135,7 +135,7 @@ public class CrownFragment extends LazyFragment implements BaseQuickAdapter.Requ
             }
         });
         crown_multiAdapter.setOnLoadMoreListener(this);
-        crown_multiAdapter.openLoadAnimation(BaseQuickAdapter.SLIDEIN_BOTTOM);
+        crown_multiAdapter.openLoadAnimation(BaseQuickAdapter.SCALEIN);
         crownRecyclerview.setAdapter(crown_multiAdapter);
     }
 

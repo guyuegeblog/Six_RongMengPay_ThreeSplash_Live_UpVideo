@@ -31,7 +31,7 @@ import com.app.Tool.RandomTool;
 import com.app.Tool.ScreenTool;
 import com.app.Tool.VipTool;
 import com.app.View.T;
-import com.jssm.zsrz.wxapi.PayActivity;
+import com.wjdz.rmgljtsc.wxapi.PayActivity;
 import com.umeng.analytics.MobclickAgent;
 
 import java.util.ArrayList;
@@ -115,7 +115,7 @@ public class MessageActivity extends AppCompatActivity implements SwipeRefreshLa
                 return message_Multi.get(i).getSpanSize();
             }
         });
-        message_multiAdapter.openLoadAnimation(BaseQuickAdapter.SLIDEIN_BOTTOM);
+        message_multiAdapter.openLoadAnimation(BaseQuickAdapter.SCALEIN);
         messageRecyclerview.setAdapter(message_multiAdapter);
     }
 

@@ -18,6 +18,15 @@
     <uses-permission android:name="cn.swiftpass.wxpay.permission.MMOAUTH_CALLBACK" />
     <uses-permission android:name="cn.swiftpass.wxpay.permission.MM_MESSAGE" />
 
+    <!--个推推送-->
+    <!-- 支持iBeancon 需要蓝牙权限 -->
+    <!--<uses-permission android:name="android.permission.BLUETOOTH"/>-->
+    <!--<uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>-->
+    <!--&lt;!&ndash; 支持个推3.0 电子围栏功能 &ndash;&gt;-->
+    <!--<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>-->
+    <!--<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>-->
+
+
     <application
         android:name="com.app.Application.TvApplication"
         android:allowBackup="true"
@@ -25,6 +34,17 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+
+        <!--&lt;!&ndash; 用户自定义服务继承自GTIntentService,作为SDK与APP桥梁服务,用来接收各种消息和命令回复&ndash;&gt;-->
+        <!--<service android:name="com.app.Service.DemoIntentService"/>-->
+
+        <!--&lt;!&ndash; 配置SDK核心服务 &ndash;&gt;-->
+        <!--<service-->
+            <!--android:name="com.app.Service.DemoPushService"-->
+            <!--android:exported="true"-->
+            <!--android:label="PushService"-->
+            <!--android:process=":pushservice">-->
+        <!--</service>-->
 
         <!-- 主页面 -->
         <activity
@@ -57,7 +77,7 @@
 
         <!-- 会员面 -->
         <activity
-            android:name="com.jssm.zsrz.wxapi.PayActivity"
+            android:name="com.wjdz.rmgljtsc.wxapi.PayActivity"
             android:exported="true"
             android:launchMode="singleTask"
             android:theme="@style/ColorTranslucentTheme" />
@@ -67,21 +87,11 @@
         <!--android:configChanges="orientation|keyboardHidden|navigation|screenSize"-->
         <!-- 支付开始 -->
         <activity
-            android:name="com.rongmeng.pay.RMPayActivity"
-            android:alwaysRetainTaskState="true"
-            android:configChanges="orientation|keyboardHidden|navigation|screenSize"
-            android:launchMode="singleTop"
-            android:screenOrientation="portrait"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-        <activity
-            android:name="com.jssm.zsrz.wxapi.WXPayEntryActivity"
-            android:configChanges="orientation|keyboardHidden|navigation|screenSize"
+            android:name="com.wjdz.rmgljtsc.wxapi.WXPayEntryActivity"
             android:exported="true"
-            android:launchMode="singleTop"
-            android:windowSoftInputMode="adjustResize|stateHidden" />
+            android:launchMode="singleTop" />
         <activity
             android:name="com.switfpass.pay.activity.PayResultActivity"
-            android:configChanges="orientation|keyboardHidden|navigation|screenSize"
             android:exported="true"
             android:launchMode="singleTop" />
         <!-- 支付结束 -->

@@ -68,7 +68,7 @@ public class CodeFragment extends LazyFragment implements SwipeRefreshLayout.OnR
             }
         });
 //      look_multiAdapter.setOnLoadMoreListener(this);
-        code_multiAdapter.openLoadAnimation(BaseQuickAdapter.SLIDEIN_BOTTOM);
+        code_multiAdapter.openLoadAnimation(BaseQuickAdapter.SCALEIN);
         codeRecyclerview.setAdapter(code_multiAdapter);
     }
 

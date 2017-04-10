@@ -38,7 +38,7 @@ import com.app.Tool.ScreenTool;
 import com.app.Tool.VipTool;
 import com.app.View.Look_MarginDecoration;
 import com.app.View.T;
-import com.jssm.zsrz.wxapi.PayActivity;
+import com.wjdz.rmgljtsc.wxapi.PayActivity;
 import com.umeng.analytics.MobclickAgent;
 
 import org.json.JSONException;
@@ -174,7 +174,7 @@ public class LoadMoreActivity extends AppCompatActivity implements SwipeRefreshL
             }
         });
 //       look_multiAdapter.setOnLoadMoreListener(this);
-        more_mutil_adapter.openLoadAnimation(BaseQuickAdapter.SLIDEIN_BOTTOM);
+        more_mutil_adapter.openLoadAnimation(BaseQuickAdapter.SCALEIN);
         loadmoreRecyclerview.setAdapter(more_mutil_adapter);
     }
 

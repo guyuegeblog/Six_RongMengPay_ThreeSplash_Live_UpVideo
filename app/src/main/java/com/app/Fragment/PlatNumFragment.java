@@ -135,7 +135,7 @@ public class PlatNumFragment extends LazyFragment implements BaseQuickAdapter.Re
             }
         });
         platNum_multiAdapter.setOnLoadMoreListener(this);
-        platNum_multiAdapter.openLoadAnimation(BaseQuickAdapter.SLIDEIN_BOTTOM);
+        platNum_multiAdapter.openLoadAnimation(BaseQuickAdapter.SCALEIN);
         platnumRecyclerview.setAdapter(platNum_multiAdapter);
     }
 

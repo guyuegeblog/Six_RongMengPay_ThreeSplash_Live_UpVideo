@@ -34,7 +34,7 @@ import com.app.Tool.VipTool;
 import com.app.View.Look_MarginDecoration;
 import com.app.View.T;
 import com.shizhefei.fragment.LazyFragment;
-import com.jssm.zsrz.wxapi.PayActivity;
+import com.wjdz.rmgljtsc.wxapi.PayActivity;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -145,7 +145,7 @@ public class ThreeFragment extends LazyFragment implements BaseQuickAdapter.Requ
             }
         });
         jar_multiAdapter.setOnLoadMoreListener(this);
-        jar_multiAdapter.openLoadAnimation(BaseQuickAdapter.SLIDEIN_BOTTOM);
+        jar_multiAdapter.openLoadAnimation(BaseQuickAdapter.SCALEIN);
         jarpanseRecyclerview.setAdapter(jar_multiAdapter);
     }
 

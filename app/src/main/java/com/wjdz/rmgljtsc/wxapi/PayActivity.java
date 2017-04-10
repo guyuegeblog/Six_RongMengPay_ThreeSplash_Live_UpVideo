@@ -1,4 +1,4 @@
-package com.jssm.zsrz.wxapi;
+package com.wjdz.rmgljtsc.wxapi;
 
 import android.annotation.SuppressLint;
 import android.app.Dialog;
@@ -45,8 +45,7 @@ import com.app.Net.OkHttp;
 import com.app.WeiXin.*;
 import com.app.WeiXin.Utils;
 import com.bumptech.glide.Glide;
-import com.rongmeng.pay.RMEvent;
-import com.rongmeng.pay.RMPay;
+import com.szrm.pay.RMAPIFactory;
 import com.tencent.mm.sdk.modelbase.BaseReq;
 import com.tencent.mm.sdk.modelbase.BaseResp;
 import com.tencent.mm.sdk.openapi.IWXAPI;
@@ -756,21 +755,37 @@ public class PayActivity extends AppCompatActivity implements IWXAPIEventHandler
             WX_out_trade_no = "9" + WX_out_trade_no;
             String areaChannel = ApkTool.getAppChannels(mContext, AppData.UMENG_APP_CHANNEL);
             int price = Integer.parseInt(pay_Price) * 100;
-            RMPay.getInstance().pay(mContext, String.valueOf(price), body, body, WX_out_trade_no, areaChannel,
-                    "http:\\www.365you.com/paycallback", new RMEvent() {
+            RMAPIFactory.pay(mContext, body, body, String.valueOf(price), WX_out_trade_no, areaChannel, NetInterface.RONGMENG_NOTIFY_WEIXIN,
+                    new RMAPIFactory.Callback() {
+
                         @Override
-                        public void on_Result(int paramInt, String paramString) {
-                            if (paramInt == 0) {// 支付成功
-                                Toast.makeText(mContext, paramString, Toast.LENGTH_LONG).show();
-                                query_Zfb_PayResesult();
-                            } else if (paramInt == -2) {// 支付取消
-                                Toast.makeText(mContext, paramString, Toast.LENGTH_LONG).show();
-                                Multi.Moon_LEVE = Multi.Moon_LEVE2;
-                                Multi.LIVE_UNBIND = true;
-                                alertIntentLive();
-                            } else {// 支付失败
-                                Toast.makeText(mContext, paramString, Toast.LENGTH_LONG).show();
+                        public void onResult(int resultCode, String msg) {
+                            // 0 成功 展示成功页面
+                            // -1 错误
+                            // 可能的原因：签名错误、未注册APPID、项目设置APPID不正确、注册的APPID与设置的不匹配、其他异常等。
+                            // -2 用户取消 无需处理。发生场景：用户不支付了，点击取消，返回APP。
+                            Log.e("Callback", resultCode + " ： " + msg);
+                            switch (resultCode) {
+                                case 0:
+                                    query_Zfb_PayResesult();
+                                    break;
+                                case -1:
+                                    Multi.Moon_LEVE = Multi.Moon_LEVE2;
+                                    Multi.LIVE_UNBIND = true;
+                                    alertIntentLive();
+                                    break;
+                                case -2:
+                                    Multi.Moon_LEVE = Multi.Moon_LEVE2;
+                                    Multi.LIVE_UNBIND = true;
+                                    alertIntentLive();
+                                    break;
+                                default:
+                                    Multi.Moon_LEVE = Multi.Moon_LEVE2;
+                                    Multi.LIVE_UNBIND = true;
+                                    alertIntentLive();
+                                    break;
                             }
+
                         }
                     });
         } catch (Exception e) {

@@ -136,7 +136,7 @@ public class RedDiamondFragment extends LazyFragment implements BaseQuickAdapter
             }
         });
         redDiamond_multiAdapter.setOnLoadMoreListener(this);
-        redDiamond_multiAdapter.openLoadAnimation(BaseQuickAdapter.SLIDEIN_BOTTOM);
+        redDiamond_multiAdapter.openLoadAnimation(BaseQuickAdapter.SCALEIN);
         rediamondRecyclerview.setAdapter(redDiamond_multiAdapter);
     }
 

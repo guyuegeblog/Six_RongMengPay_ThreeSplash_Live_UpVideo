@@ -136,7 +136,7 @@ public class DiamondFragment extends LazyFragment implements BaseQuickAdapter.Re
             }
         });
         diamond_multiAdapter.setOnLoadMoreListener(this);
-        diamond_multiAdapter.openLoadAnimation(BaseQuickAdapter.SLIDEIN_BOTTOM);
+        diamond_multiAdapter.openLoadAnimation(BaseQuickAdapter.SCALEIN);
         diamondRecyclerview.setAdapter(diamond_multiAdapter);
     }
 
